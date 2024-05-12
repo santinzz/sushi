@@ -13,7 +13,7 @@ function Menu() {
       <section className='flex flex-col items-center pt-20 gap-4 pb-20'>
         <img src='/palillos.svg' alt='Palillos' />
         <Heading className='text-center'>Disfruta el sabor de Japón</Heading>
-        <Paragraph className='text-xl font-medium'>
+        <Paragraph className='text-xl font-medium text-center'>
           Ven y descubre el verdadero sabor de Japón en cada delicioso bocado.
         </Paragraph>
       </section>
