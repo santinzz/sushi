@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yeseva+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background {
+  background-color: #f0e9da;
+}
+
+.green {
+  color: #005253;
+}
+
+.orange-1 {
+  color: #e57f45;
+}
+
+.yeseva {
+  font-family: 'Yeseva One', cursive;
+}
+
+.bebas {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.eating-sushi-background {
+  background-image: url('/comiendo-sushi.webp');
+}
+
+.decorator-background {
+  background-image: url('/decorador.svg');
+}
+
+.decorator-2-background {
+  background-image: url('/decorador2.svg');
+}
