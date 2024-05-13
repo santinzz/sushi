@@ -1,14 +1,16 @@
 const Heading = ({
   children,
-  className
+  className,
+  as: Component = 'h1',
 }: {
   children: React.ReactNode,
   className?: string
+  as?: React.ElementType
 }) => {
   return (
-    <h1 className={`yeseva text-green text-7xl max-w-[640px] ${className}`}>
+    <Component className={`yeseva text-green max-w-[640px] ${className}`}>
       {children}
-    </h1>
+    </Component>
   )
 }
 

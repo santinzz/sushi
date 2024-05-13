@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className='max-w-7xl w-full mx-auto px-4 flex pt-36'>
       <section className='space-y-4 pt-10'>
-        <Heading>Disfruta el completo sabor de Japón</Heading>
+        <Heading className='text-7xl'>Disfruta el completo sabor de Japón</Heading>
         <Paragraph>
           Desde los clásicos nigiri y sashimi hasta nuestras innovadoras
           creaciones de rollos, cada plato está meticulosamente elaborado para

@@ -12,7 +12,7 @@ function Menu() {
     <div className='p-2'>
       <section className='flex flex-col items-center pt-20 gap-4 pb-20'>
         <img src='/palillos.svg' alt='Palillos' />
-        <Heading className='text-center'>Disfruta el sabor de Japón</Heading>
+        <Heading className='text-7xl text-center'>Disfruta el sabor de Japón</Heading>
         <Paragraph className='text-xl font-medium text-center'>
           Ven y descubre el verdadero sabor de Japón en cada delicioso bocado.
         </Paragraph>
@@ -23,7 +23,7 @@ function Menu() {
         <article className='w-[1200px] mx-auto bg-white rounded-lg p-16 flex'>
           <section className='space-y-8 w-1/2'>
             <img loading='lazy' src='palillos.svg' alt='Palillos chinos' />
-            <Heading>Futomaki</Heading>
+            <Heading as='h2' className='text-7xl'>Futomaki</Heading>
             <Paragraph className='text-green text-lg max-w-[500px]'>
               El Futomaki es una variedad de sushi tipo maki, que se diferencia
               de otros tipos de sushi por su tamaño y contenido.
