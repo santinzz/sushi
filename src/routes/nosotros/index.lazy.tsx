@@ -1,6 +1,6 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
-import Heading from '../components/utils/heading'
-import Paragraph from '../components/utils/paragraph'
+import Heading from '../../components/utils/heading'
+import Paragraph from '../../components/utils/paragraph'
 
 export const Route = createLazyFileRoute('/nosotros' as never)({
   component: Nosotros,

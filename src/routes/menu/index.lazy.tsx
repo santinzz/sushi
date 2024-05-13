@@ -1,7 +1,7 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
-import Heading from '../components/utils/heading'
-import Paragraph from '../components/utils/paragraph'
-import FoodItem from '../components/food-item'
+import Heading from '../../components/utils/heading'
+import Paragraph from '../../components/utils/paragraph'
+import FoodItem from '../../components/food-item'
 
 export const Route = createLazyFileRoute('/menu' as never)({
   component: Menu,

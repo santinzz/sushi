@@ -16,26 +16,28 @@ import { Route as rootRoute } from './routes/__root'
 
 // Create Virtual Routes
 
-const NosotrosLazyImport = createFileRoute('/nosotros')()
-const MenuLazyImport = createFileRoute('/menu')()
 const IndexLazyImport = createFileRoute('/')()
+const NosotrosIndexLazyImport = createFileRoute('/nosotros/')()
+const MenuIndexLazyImport = createFileRoute('/menu/')()
 
 // Create/Update Routes
-
-const NosotrosLazyRoute = NosotrosLazyImport.update({
-  path: '/nosotros',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/nosotros.lazy').then((d) => d.Route))
-
-const MenuLazyRoute = MenuLazyImport.update({
-  path: '/menu',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/menu.lazy').then((d) => d.Route))
 
 const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const NosotrosIndexLazyRoute = NosotrosIndexLazyImport.update({
+  path: '/nosotros/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./routes/nosotros/index.lazy').then((d) => d.Route),
+)
+
+const MenuIndexLazyRoute = MenuIndexLazyImport.update({
+  path: '/menu/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/menu/index.lazy').then((d) => d.Route))
 
 // Populate the FileRoutesByPath interface
 
@@ -45,12 +47,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/menu': {
-      preLoaderRoute: typeof MenuLazyImport
+    '/menu/': {
+      preLoaderRoute: typeof MenuIndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/nosotros': {
-      preLoaderRoute: typeof NosotrosLazyImport
+    '/nosotros/': {
+      preLoaderRoute: typeof NosotrosIndexLazyImport
       parentRoute: typeof rootRoute
     }
   }
@@ -60,8 +62,8 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexLazyRoute,
-  MenuLazyRoute,
-  NosotrosLazyRoute,
+  MenuIndexLazyRoute,
+  NosotrosIndexLazyRoute,
 ])
 
 /* prettier-ignore-end */
